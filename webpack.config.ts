@@ -1,5 +1,7 @@
 import path from 'path';
 import { Configuration } from 'webpack';
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config: Configuration = {
   entry: './src/index.ts',
   module: {
@@ -16,6 +18,9 @@ const config: Configuration = {
       },
     ],
   },
+  plugins: [new HtmlWebpackPlugin({
+    template: 'src/index.html'
+})],
   resolve: {
     extensions: ['.ts', '.js'],
   },
